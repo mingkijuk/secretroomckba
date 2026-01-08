@@ -1,3 +1,31 @@
+import { useEffect } from "react";
+
+function App() {
+  useEffect(() => {
+    fetch("/api/generateNews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt: "대한민국 가상의 괴이 관리국 속보 생성"
+      })
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log("API 응답:", data);
+      })
+      .catch(err => {
+        console.error("API 에러:", err);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h1>CKBA</h1>
+    </div>
+  );
+}
+
+export default App;
 
 import React, { useState, useRef, useMemo, useEffect } from 'react';
 import Header from './components/Header';
