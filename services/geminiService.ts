@@ -1,10 +1,7 @@
 
-import { GoogleGenAI, Type } from "@google/genai";
 import { NewsAlert, AnomalyReport } from "../types";
 
 // Always use a named parameter and direct process.env.API_KEY reference
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 // 캐시 키 및 설정
 const CACHE_KEYS = {
   NEWS: 'ckba_news_cache_v3',
